@@ -1,25 +1,78 @@
-# **Automated Transaction Reporting Pipeline**
-An automated data orchestration pipeline built with Apache Airflow. This project demonstrates a complete workflow for processing financial transactions, executing external scripts, and distributing reports via email notifications.
+# 🚀 Automated Transaction Reporting Pipeline
 
+An end-to-end data orchestration pipeline built with Apache Airflow for near real-time financial transaction processing, reporting, and notification delivery.
 
-# **Project Overview**
+---
 
-The pipeline (Report_Transaction) is designed to run every 10 minutes, ensuring real-time data processing and reporting. It handles everything from data calculation to multi-channel communication.
+## 📌 Overview
 
-Key Features:
-- Modular Design: Uses specialized Airflow Operators (Python, Bash, Email).
-- Data Integrity: Includes a calculation logic that aggregates transaction data and generates a persistent text report.
-- External Integration: Demonstrates the ability to trigger external Python applications (app.py) via Bash commands.
-- Automated Alerts: Delivers an HTML-formatted report directly to the stakeholder's inbox.
+The **`Report_Transactions`** DAG runs every 10 minutes, enabling continuous processing of transaction data and timely report distribution.
 
+This project demonstrates a complete workflow:
+- Data processing
+- External script execution
+- Automated email reporting
 
-# **Tech Stack**
+---
 
-- Orchestrator: Apache Airflow
-- Language: Python 3
-- Scripting: Bash
-- Environment: Linux/Docker
+## 📷 ScreenShot
+![Airflow DAG](./assets/Screenshot.png)
 
+---
 
-# **ScreenShot**
-<img width="1912" height="876" alt="Screenshot 2026-04-26 013328" src="https://github.com/user-attachments/assets/484837f6-2590-4b81-9e84-0f511f5e0327" />
+## ⚙️ Key Features
+
+### 🔹 Modular Workflow Design
+- `PythonOperator` → Data processing  
+- `BashOperator` → External script execution  
+- `EmailOperator` → Notifications  
+
+---
+
+### 🔹 Data Processing & Integrity
+- Aggregates transaction data  
+- Generates a persistent report file  
+- Ensures consistent and traceable outputs  
+
+---
+
+### 🔹 External Script Integration
+- Executes external Python script (`app.py`) via Bash  
+- Shows orchestration beyond Airflow-native tasks  
+
+---
+
+### 🔹 Automated Reporting
+- Sends HTML email reports to stakeholders  
+- Enables near real-time monitoring  
+
+---
+
+## 🛠️ Tech Stack
+
+| Component      | Technology      |
+|---------------|----------------|
+| Orchestration | Apache Airflow |
+| Language      | Python 3       |
+| Scripting     | Bash           |
+| Environment   | Linux / Docker |
+
+---
+
+## ⏱️ Scheduling
+
+- **Frequency:** Every 10 minutes  
+- **Goal:** Near real-time transaction reporting  
+
+---
+
+## 📊 Pipeline Workflow
+
+```text
+print_start
+    ↓
+calculate_transactions
+    ↓
+run_external_script
+    ↓
+send_email_report
